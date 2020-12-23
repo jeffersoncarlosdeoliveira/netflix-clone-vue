@@ -15,10 +15,10 @@
                 <div class="destaque-temporadas"> {{Destaque.number_of_seasons}} temporada{{Destaque.number_of_seasons > 1 ? 's' : ''}}</div>
             </div>
             <div class="destaque-descricao">
-                 {{Destaque.overview}}
+                 {{descricao}}
             </div>
             <div class="destaque-botoes">
-                <a href="" class="destaque-botao-assistir">► Assitir</a>
+                <a href="" class="destaque-botao-assistir">► Assistir</a>
                 <a href="" class="destaque-botao-minhalista">+ Minha Lista</a>
             </div>
             <div class="destaque-generos">
@@ -51,6 +51,14 @@ export default {
                 generos.push(this.Destaque.genres[i].name)
             }
             return generos.join(', ')
+        },
+        descricao: function(){
+            console.log(this.Destaque.overview.length)
+            if(this.Destaque.overview.length > 370){
+                let overview = this.Destaque.overview;
+                return `${overview.substring(0,370)}...`
+            }
+            return this.Destaque.overview;
         }
     }
 }

@@ -74,3 +74,28 @@
     font-size: 18px;
     color: #999;
 }
+
+@media(max-width: 760px){
+    .destaque{
+        height: 80vh;   
+    }
+    .destaque-nome{
+        font-size: 40px;
+    }
+    .destaque-info{
+        font-size: 16px;
+    }
+    .destaque-descricao{
+        font-size: 14px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+    .destaque-botao-assistir,
+    .destaque-botao-minhalista{
+        font-size: 16px;
+        
+    }
+    .destaque-generos{
+        font-size: 14px;
+    }
+}

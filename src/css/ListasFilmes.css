@@ -9,7 +9,7 @@
     padding-left: 30px;
 }
 .movierow-list{
-    width: 99999999999999px;
+    transition: all ease 0.5s;
 }
 .movierow-item{
     display: inline-block;
@@ -23,4 +23,36 @@
 }
 .movierow-item img:hover{
     transform: scale(1);
+}
+.movierow-esquerda,
+.movierow-direita{
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    background-color:rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.5s;
+}
+.movierow-esquerda{
+    left: 0;
+}
+.movierow-direita{
+    right: 0;
+}
+.movierow:hover .movierow-esquerda,
+.movierow:hover .movierow-direita{
+    opacity: 1;
+}
+
+@media (max-width : 760px){
+    .movierow-direita,
+    .movierow-esquerda{
+        opacity: 1;
+    }
 }

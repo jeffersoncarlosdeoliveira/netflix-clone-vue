@@ -14,10 +14,14 @@
             <div class="rodape">
                 <Rodape />
             </div>
+            <div class="loading" v-if="TodosFilmes.length <=0">
+                <img src="../../images/loading.gif" alt="loading" >
+            </div>
         </div>
 </template>
 
 <script>
+import '../css/Home.css'
 import Tmdb from '../tmdb.js'
 import ListasFilme from './ListasFilme.vue'
 import Destaque from './Destaque.vue'
@@ -54,8 +58,6 @@ export default {
             this.Destaque = filmeDestaqueEscolhidoInfo;
         }
         carregaTodosFilmes();
-    },
-    methods:{
     }
 }
 </script>

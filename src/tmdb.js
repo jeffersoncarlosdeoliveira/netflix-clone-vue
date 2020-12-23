@@ -1,16 +1,6 @@
 const API_KEY ='9274087c7992f7175c31b322c475df06';
 const API_BASE ='https://api.themoviedb.org/3';
 
-/*
-    - Originais da Netflix
-    - Recomendados (trending)
-    - Em alta  (top rated)
-    - Ação
-    - Comedia
-    - SciFi
-    - Romance
-    - Documentarios
-*/
 const basicFecth = async(endpoint) =>{
     const req = await fetch(`${API_BASE}${endpoint}`);
     const json = await req.json();
@@ -37,9 +27,9 @@ export default{
                 items: await basicFecth(`/movie/top_rated?language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug:'comedy',
-                titulo: 'Comédia',
-                items: await basicFecth(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
+                slug:'family',
+                titulo: 'Família',
+                items: await basicFecth(`/discover/movie?with_genres=10751&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug:'action',
@@ -58,8 +48,8 @@ export default{
             },
             {
                 slug:'documentary',
-                titulo: 'Documentários',
-                items: await basicFecth(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
+                titulo: 'Crime',
+                items: await basicFecth(`/discover/movie?with_genres=80&language=pt-BR&api_key=${API_KEY}`)
             }
         ]
     },
